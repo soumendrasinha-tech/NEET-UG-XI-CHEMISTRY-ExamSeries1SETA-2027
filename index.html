@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET CHEMISTRY XI EXAM SERIES 1 SET A - CBT Portal</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- MathJax for LaTeX / Chemical Formula Rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* Custom Styling for CBT Realism */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Prevent text selection and screenshot clarity enhancement */
+        .no-select {
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        /* Watermark Overlay */
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.08;
+            background: repeating-linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.1) 150px,
+                rgba(0, 0, 0, 0.3) 150px,
+                rgba(0, 0, 0, 0.3) 300px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            transform: rotate(-25deg);
+            white-space: nowrap;
+        }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Modal Blur */
+        .modal-backdrop {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col no-select" oncontextmenu="return false;">
+
+    <!-- Candidate Anti-Photo Watermark Overlay -->
+    <div id="watermarkOverlay" class="watermark hidden">
+        <span id="watermarkText">CONFIDENTIAL - SOUMENDRA SIR'S BIOLOGY CLASSES</span>
+    </div>
+
+    <!-- HEADER BAR -->
+    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-500 text-slate-900 font-bold p-2 rounded-lg text-lg flex items-center justify-center h-10 w-10">
+                    <i class="fa-solid fa-atom text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-emerald-400 tracking-wide">Soumendra Sir's Biology Classes</h1>
+                    <p class="text-xs text-slate-400 font-medium">Helpline / Support: <span class="text-amber-400 font-semibold">+91 8910587106</span></p>
+                </div>
+            </div>
+
+            <!-- Header Exam Info / Timer -->
+            <div id="headerExamInfo" class="hidden flex items-center space-x-6">
+                <div class="hidden md:block text-right">
+                    <span class="block text-xs text-slate-400">Candidate Name</span>
+                    <span id="candidateNameDisplay" class="font-bold text-slate-200">Student</span>
+                </div>
+                <div class="bg-slate-900 px-4 py-2 rounded-lg border border-slate-700 flex items-center space-x-3 shadow-inner">
+                    <i class="fa-regular fa-clock text-amber-400 animate-pulse text-lg"></i>
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Time Remaining</span>
+                        <span id="timerDisplay" class="font-mono text-xl font-bold text-amber-400">60:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow flex flex-col">
+
+        <!-- ================= PAGE 1: AUTHENTICATION ================= -->
+        <section id="authSection" class="flex-grow flex items-center justify-center px-4 py-8">
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl p-6 md:p-8 max-w-md w-full relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500"></div>
+                
+                <div class="text-center mb-6">
+                    <div class="inline-block p-3 rounded-full bg-slate-700 text-emerald-400 mb-3">
+                        <i class="fa-solid fa-user-shield text-3xl"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-100">Candidate Verification</h2>
+                    <p class="text-xs text-slate-400 mt-1">NEET CHEMISTRY XI EXAM SERIES 1 SET A</p>
+                </div>
+
+                <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Full Candidate Name</label>
+                        <input type="text" id="candidateName" required placeholder="Enter your full name" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-emerald-500 transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-300 mb-1">Date Password (DDMMYYYY)</label>
+                        <input type="password" id="datePassword" maxlength="8" required placeholder="Format: DDMMYYYY (e.g. 11102026)" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-slate-200 focus:outline-none focus:border-emerald-500 transition font-mono tracking-widest">
+                        <span class="text-[11px] text-slate-500 mt-1 block">* Use today's date password provided by the instructor.</span>
+                    </div>
+
+                    <!-- Captcha Widget -->
+                    <div class="bg-slate-900 p-3 rounded-lg border border-slate-700">
+                        <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Security Verification (CAPTCHA)</label>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <span id="captchaQuestion" class="font-mono text-lg font-bold text-amber-400 bg-slate-800 px-4 py-1.5 rounded border border-slate-700 select-none">3 + 5 = ?</span>
+                            <button type="button" onclick="generateCaptcha()" class="text-slate-400 hover:text-emerald-400 text-sm p-2" title="Refresh Captcha">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </button>
+                        </div>
+                        <input type="number" id="captchaAnswer" required placeholder="Enter answer" 
+                            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-slate-200 focus:outline-none focus:border-emerald-500 transition font-mono">
+                    </div>
+
+                    <div id="authError" class="hidden text-rose-400 text-xs text-center font-medium bg-rose-950/40 border border-rose-800/50 p-2.5 rounded-lg"></div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-emerald-900/40 transition flex items-center justify-center space-x-2">
+                        <span>Verify & Proceed</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: INSTRUCTIONS ================= -->
+        <section id="instructionSection" class="hidden flex-grow max-w-5xl mx-auto w-full px-4 py-6 flex flex-col justify-between">
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-xl space-y-6">
+                <div class="border-b border-slate-700 pb-4 flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold px-3 py-1 rounded-full">Official CBT Portal</span>
+                        <h2 class="text-2xl font-extrabold text-slate-100 mt-2">NEET CHEMISTRY XI EXAM SERIES 1 SET A</h2>
+                    </div>
+                    <div class="flex items-center space-x-4 text-xs font-semibold">
+                        <div class="bg-slate-900 px-3 py-2 rounded-lg border border-slate-700">
+                            <span class="text-slate-400 block">Questions</span>
+                            <span class="text-emerald-400 text-base font-bold">45</span>
+                        </div>
+                        <div class="bg-slate-900 px-3 py-2 rounded-lg border border-slate-700">
+                            <span class="text-slate-400 block">Max Marks</span>
+                            <span class="text-emerald-400 text-base font-bold">180</span>
+                        </div>
+                        <div class="bg-slate-900 px-3 py-2 rounded-lg border border-slate-700">
+                            <span class="text-slate-400 block">Duration</span>
+                            <span class="text-amber-400 text-base font-bold">60 Mins</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topics Covered -->
+                <div>
+                    <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2"><i class="fa-solid fa-book-open mr-2"></i>Syllabus & Topics Covered:</h3>
+                    <div class="grid md:grid-cols-2 gap-3 text-xs bg-slate-900/60 p-4 rounded-xl border border-slate-700/60 text-slate-300">
+                        <div>
+                            <strong class="text-emerald-400 block mb-1">1. Some Basic Concepts of Chemistry:</strong>
+                            Matter & its nature, Dalton's Atomic Theory, Laws of Chemical Combination, Atomic & Molecular Masses, Mole Concept, Molar Mass, Empirical & Molecular Formulae, Stoichiometry.
+                        </div>
+                        <div>
+                            <strong class="text-emerald-400 block mb-1">2. Structure of Atom:</strong>
+                            Electromagnetic radiation, Photoelectric effect, Bohr Model, de Broglie relation, Heisenberg uncertainty, Quantum numbers ($n, l, m_l, m_s$), Wavefunctions ($\psi, \psi^2$), Shapes of orbitals, Aufbau/Pauli/Hund rules.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marking Scheme & Security Rules -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="text-xs font-bold text-slate-200 uppercase mb-2"><i class="fa-solid fa-square-check text-emerald-400 mr-2"></i>Marking Scheme</h4>
+                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                            <li><span class="text-emerald-400 font-bold">+4 Marks</span> for each correct answer.</li>
+                            <li><span class="text-rose-400 font-bold">-1 Mark</span> for each incorrect response (Negative marking).</li>
+                            <li><span class="text-slate-400 font-bold">0 Marks</span> for unattempted questions.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-700/50">
+                        <h4 class="text-xs font-bold text-slate-200 uppercase mb-2"><i class="fa-solid fa-triangle-exclamation text-amber-400 mr-2"></i>CBT Security Rules</h4>
+                        <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+                            <li>Exam must be taken in <strong class="text-slate-200">Full-Screen Mode</strong>.</li>
+                            <li>Tab switching, window minimization, or copying text will be recorded as security warnings.</li>
+                            <li>Dynamic identity watermark is rendered to protect paper integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Color Palette Reference -->
+                <div>
+                    <h4 class="text-xs font-bold text-slate-300 uppercase mb-2">Question Palette Legend</h4>
+                    <div class="flex flex-wrap gap-3 text-xs">
+                        <span class="flex items-center space-x-1.5"><span class="w-4 h-4 bg-emerald-600 rounded"></span><span class="text-slate-300">Answered</span></span>
+                        <span class="flex items-center space-x-1.5"><span class="w-4 h-4 bg-rose-600 rounded"></span><span class="text-slate-300">Not Answered</span></span>
+                        <span class="flex items-center space-x-1.5"><span class="w-4 h-4 bg-purple-600 rounded"></span><span class="text-slate-300">Marked for Review</span></span>
+                        <span class="flex items-center space-x-1.5"><span class="w-4 h-4 bg-slate-700 rounded"></span><span class="text-slate-300">Not Visited</span></span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-3 pt-2">
+                    <input type="checkbox" id="termsCheck" class="w-4 h-4 accent-emerald-500 rounded cursor-pointer">
+                    <label for="termsCheck" class="text-xs text-slate-300 cursor-pointer select-none">
+                        I have read and understood all the exam rules, syllabus details, and security policies.
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button onclick="startExam()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-emerald-900/40 transition flex items-center space-x-2">
+                    <i class="fa-solid fa-play text-sm"></i>
+                    <span>Start Test Now</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: CBT EXAM INTERFACE ================= -->
+        <section id="cbtSection" class="hidden flex-grow flex flex-col md:flex-row max-w-[1600px] w-full mx-auto p-2 md:p-4 gap-4 h-[calc(100vh-4rem)]">
+            
+            <!-- LEFT PANEL: QUESTION DISPLAY & OPTIONS -->
+            <div class="flex-grow flex flex-col bg-slate-800 border border-slate-700 rounded-xl shadow-xl overflow-hidden h-full">
+                
+                <!-- Question Top Header Bar -->
+                <div class="bg-slate-900 px-5 py-3 border-b border-slate-700 flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <span id="qCategoryBadge" class="bg-slate-800 text-emerald-400 border border-emerald-500/30 text-xs font-semibold px-2.5 py-1 rounded-md">
+                            Statement Based
+                        </span>
+                        <span id="qNumberBadge" class="text-sm font-bold text-slate-200">Question 1 of 45</span>
+                    </div>
+                    <div class="text-xs text-slate-400">
+                        Marks: <span class="text-emerald-400 font-bold">+4</span> / <span class="text-rose-400 font-bold">-1</span>
+                    </div>
+                </div>
+
+                <!-- Question Text & SVGs Container -->
+                <div id="questionContainer" class="flex-grow p-6 overflow-y-auto space-y-6 text-slate-200">
+                    <div id="qText" class="text-base md:text-lg font-medium leading-relaxed">
+                        <!-- Loaded dynamically -->
+                    </div>
+
+                    <!-- SVG Diagram Placeholder (if present) -->
+                    <div id="qDiagramContainer" class="hidden my-4 p-4 bg-slate-900/80 border border-slate-700 rounded-xl flex justify-center items-center">
+                        <!-- SVG injected here -->
+                    </div>
+
+                    <!-- Options Grid -->
+                    <div id="optionsContainer" class="space-y-3 pt-2">
+                        <!-- Options injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- CBT Navigation Bottom Bar -->
+                <div class="bg-slate-900 px-5 py-3 border-t border-slate-700 flex flex-wrap gap-2 justify-between items-center">
+                    <div class="flex space-x-2">
+                        <button onclick="markForReview()" class="bg-purple-700 hover:bg-purple-600 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+                            Mark for Review & Next
+                        </button>
+                        <button onclick="clearResponse()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+                            Clear Response
+                        </button>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="prevQuestion()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold px-4 py-2.5 rounded-lg transition">
+                            <i class="fa-solid fa-chevron-left mr-1"></i> Previous
+                        </button>
+                        <button onclick="saveAndNext()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-6 py-2.5 rounded-lg transition shadow-md shadow-emerald-900/30">
+                            Save & Next <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: QUESTION PALETTE SIDEBAR -->
+            <div class="w-full md:w-80 bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between shrink-0 shadow-xl h-auto md:h-full">
+                <div>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center justify-between">
+                        <span>Question Palette</span>
+                        <i class="fa-solid fa-grip text-emerald-400"></i>
+                    </h3>
+
+                    <!-- Status Summary Badges -->
+                    <div class="grid grid-cols-2 gap-2 text-[11px] mb-4 bg-slate-900/60 p-2.5 rounded-lg border border-slate-700/60">
+                        <div class="flex items-center space-x-2">
+                            <span id="countAnswered" class="w-5 h-5 bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px] rounded">0</span>
+                            <span class="text-slate-300">Answered</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="countNotAnswered" class="w-5 h-5 bg-rose-600 text-white flex items-center justify-center font-bold text-[10px] rounded">0</span>
+                            <span class="text-slate-300">Not Answered</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="countMarked" class="w-5 h-5 bg-purple-600 text-white flex items-center justify-center font-bold text-[10px] rounded">0</span>
+                            <span class="text-slate-300">Marked Review</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span id="countNotVisited" class="w-5 h-5 bg-slate-700 text-white flex items-center justify-center font-bold text-[10px] rounded">45</span>
+                            <span class="text-slate-300">Not Visited</span>
+                        </div>
+                    </div>
+
+                    <!-- Colorful Question Palette Grid -->
+                    <div id="paletteGrid" class="grid grid-cols-5 gap-2 max-h-64 md:max-h-96 overflow-y-auto p-1">
+                        <!-- 45 Buttons generated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-4 border-t border-slate-700">
+                    <button onclick="confirmSubmitTest()" class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-rose-950/50 transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                        <span>Submit Examination</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: DETAILED FEEDBACK REPORT ================= -->
+        <section id="feedbackSection" class="hidden flex-grow max-w-6xl mx-auto w-full px-4 py-8 space-y-8">
+            
+            <!-- Printable/Exportable Scorecard Box -->
+            <div id="scorecardPrintArea" class="bg-slate-800 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-2xl space-y-6">
+                
+                <!-- Report Header -->
+                <div class="border-b border-slate-700 pb-4 flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-emerald-400">Soumendra Sir's Biology Classes</h2>
+                        <p class="text-xs text-slate-400 font-medium">NEET CHEMISTRY XI EXAM SERIES 1 SET A - Performance Summary</p>
+                    </div>
+                    <div class="text-right">
+                        <span id="reportCandidateName" class="block font-bold text-lg text-slate-100">Candidate Name</span>
+                        <span id="reportDate" class="text-xs text-slate-400">Date: 11/10/2026</span>
+                    </div>
+                </div>
+
+                <!-- Score Overview Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
+                        <span class="text-xs font-semibold text-slate-400 uppercase">Total Score</span>
+                        <div class="text-3xl font-extrabold text-emerald-400 mt-1"><span id="finalScore">0</span> / 180</div>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
+                        <span class="text-xs font-semibold text-slate-400 uppercase">Accuracy Rate</span>
+                        <div class="text-3xl font-extrabold text-cyan-400 mt-1" id="finalAccuracy">0%</div>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
+                        <span class="text-xs font-semibold text-slate-400 uppercase">Correct Answers</span>
+                        <div class="text-3xl font-extrabold text-emerald-400 mt-1" id="finalCorrect">0</div>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
+                        <span class="text-xs font-semibold text-slate-400 uppercase">Incorrect / Left</span>
+                        <div class="text-3xl font-extrabold text-rose-400 mt-1"><span id="finalWrong">0</span> / <span id="finalUnattempted">0</span></div>
+                    </div>
+                </div>
+
+                <!-- Graphical Representation Chart -->
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-700 flex flex-col items-center">
+                        <h4 class="text-xs font-bold text-slate-300 uppercase mb-3">Performance Breakdown Chart</h4>
+                        <div class="w-64 h-64">
+                            <canvas id="scoreChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Weak Area Diagnostic Report -->
+                    <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-700 space-y-3">
+                        <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> Topic-wise Focus & Weak Area Analysis
+                        </h4>
+                        <div id="weakAreaList" class="space-y-2 text-xs text-slate-300">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons (Export & WhatsApp) -->
+                <div class="flex flex-wrap gap-4 pt-4 border-t border-slate-700 justify-end">
+                    <button onclick="downloadScorecardImage()" class="bg-slate-700 hover:bg-slate-600 text-slate-100 font-semibold text-xs px-5 py-3 rounded-lg flex items-center space-x-2 transition">
+                        <i class="fa-solid fa-file-image text-sm"></i>
+                        <span>Download Scorecard (PNG)</span>
+                    </button>
+                    <button onclick="sendToWhatsApp()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-6 py-3 rounded-lg flex items-center space-x-2 shadow-lg shadow-emerald-900/40 transition">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Send Scorecard to WhatsApp (+91 8910587106)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- DETAILED ANSWER KEYS AND EXPLANATIONS -->
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 md:p-8 shadow-2xl space-y-6">
+                <div class="border-b border-slate-700 pb-3 flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-slate-100 flex items-center">
+                        <i class="fa-solid fa-list-check text-emerald-400 mr-2"></i> Detailed Solution & Answer Key
+                    </h3>
+                    <span class="text-xs text-slate-400">All 45 Questions Explained</span>
+                </div>
+
+                <div id="solutionsList" class="space-y-6">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CONFIRM SUBMIT MODAL -->
+    <div id="submitModal" class="fixed inset-0 bg-slate-950/80 modal-backdrop hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-4">
+            <h3 class="text-lg font-bold text-slate-100">Submit Examination?</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+                Are you sure you want to finalize and submit your answers? You cannot alter your responses after submission.
+            </p>
+            <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1">
+                <div class="flex justify-between"><span>Answered:</span><strong id="modalAnswered" class="text-emerald-400">0</strong></div>
+                <div class="flex justify-between"><span>Marked for Review:</span><strong id="modalMarked" class="text-purple-400">0</strong></div>
+                <div class="flex justify-between"><span>Unattempted:</span><strong id="modalUnattempted" class="text-rose-400">45</strong></div>
+            </div>
+            <div class="flex justify-end space-x-3 pt-2">
+                <button onclick="closeSubmitModal()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold rounded-lg">Resume Test</button>
+                <button onclick="processFinalSubmission()" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg shadow-md">Confirm & Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+
+        // Global State Variables
+        let candidate = { name: '', score: 0, timeTaken: 0 };
+        let captchaNum1 = 0, captchaNum2 = 0;
+        let examTimer = null;
+        let timeRemaining = 3600; // 60 minutes
+        let currentQIndex = 0;
+        let tabSwitchCount = 0;
+        let chartInstance = null;
+
+        // User Response State per question: { selectedOption: null, status: 'not-visited' / 'answered' / 'marked' / 'not-answered' }
+        let userResponses = [];
+
+        // 45 UNIQUE QUESTIONS BANK FOR NEET CHEMISTRY XI
+        const rawQuestionBank = [
+            // --- 10 STATEMENT BASED QUESTIONS ---
+            {
+                id: 1,
+                category: "Statement Based",
+                topic: "Mole Concept & Stoichiometry",
+                text: "Read the following statements regarding the Mole concept:<br><b>Statement I:</b> One mole of any substance contains exactly $6.022 \\times 10^{23}$ elementary entities.<br><b>Statement II:</b> One mole of $O_2$ gas at STP occupies $22.4$ Litres volume.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 0,
+                explanation: "By Avogadro's definition, 1 mole contains $6.022 \\times 10^{23}$ entities and 1 mole of ideal gas occupies $22.4 \\text{ L}$ at standard temperature and pressure (STP)."
+            },
+            {
+                id: 2,
+                category: "Statement Based",
+                topic: "Atomic Structure - Bohr Model",
+                text: "<b>Statement I:</b> According to Bohr's model, angular momentum of an electron in a stationary orbit is quantized as $L = \\frac{nh}{2\\pi}$.<br><b>Statement II:</b> Bohr's model successfully explains the fine spectrum of multi-electron atoms like Helium.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 2,
+                explanation: "Statement I is Bohr's second postulate. Statement II is incorrect because Bohr's model fails for multi-electron atoms."
+            },
+            {
+                id: 3,
+                category: "Statement Based",
+                topic: "Quantum Mechanical Model",
+                text: "<b>Statement I:</b> The principal quantum number $n$ defines the size and to a large extent the energy of the orbital.<br><b>Statement II:</b> The magnetic orbital quantum number $m_l$ determines the orientation of the orbital in space relative to coordinate axes.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 0,
+                explanation: "$n$ determines shell size/energy, while $m_l$ specifies spatial orientation of orbitals."
+            },
+            {
+                id: 4,
+                category: "Statement Based",
+                topic: "Laws of Chemical Combination",
+                text: "<b>Statement I:</b> Law of Definite Proportions states that a given compound always contains exactly the same proportion of elements by weight.<br><b>Statement II:</b> Law of Conservation of Mass is violated in ordinary chemical reactions.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 2,
+                explanation: "Proust's law is correct. Mass is conserved in chemical reactions (Lavoisier's law)."
+            },
+            {
+                id: 5,
+                category: "Statement Based",
+                topic: "Dual Nature of Matter",
+                text: "<b>Statement I:</b> The de Broglie wavelength of an electron accelerated through a potential difference $V$ is given by $\\lambda = \\frac{1.227}{\\sqrt{V}} \\text{ nm}$.<br><b>Statement II:</b> Matter waves are electromagnetic in nature and travel with the speed of light.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 2,
+                explanation: "de Broglie wavelength for accelerated electron is $\\lambda = \\frac{1.227}{\\sqrt{V}} \\text{ nm}$. Matter waves are probability waves, not electromagnetic waves."
+            },
+            {
+                id: 6,
+                category: "Statement Based",
+                topic: "Photoelectric Effect",
+                text: "<b>Statement I:</b> The kinetic energy of photoelectrons increases linearly with increasing light intensity.<br><b>Statement II:</b> Below a characteristic threshold frequency $\\nu_0$, no photoelectrons are emitted regardless of light intensity.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 3,
+                explanation: "Kinetic energy of photoelectrons depends on light *frequency*, not intensity. Intensity determines the *number* of photoelectrons emitted."
+            },
+            {
+                id: 7,
+                category: "Statement Based",
+                topic: "Rules of Electronic Configuration",
+                text: "<b>Statement I:</b> Pauli's Exclusion Principle states that no two electrons in an atom can have the same set of four quantum numbers.<br><b>Statement II:</b> Hund's Rule of Maximum Multiplicity specifies that electron pairing in p, d, or f orbitals cannot occur until each orbital is singly occupied.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 0,
+                explanation: "Both statements accurately formulate Pauli's Exclusion Principle and Hund's Rule."
+            },
+            {
+                id: 8,
+                category: "Statement Based",
+                topic: "Empirical & Molecular Formula",
+                text: "<b>Statement I:</b> Molecular formula is always an integral multiple of empirical formula: $\\text{Molecular Formula} = n \\times \\text{Empirical Formula}$.<br><b>Statement II:</b> Empirical formula gives the exact actual number of atoms of each element present in a molecule.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 2,
+                explanation: "Empirical formula gives the simplest whole-number ratio, while molecular formula gives the exact actual number of atoms."
+            },
+            {
+                id: 9,
+                category: "Statement Based",
+                topic: "Heisenberg Uncertainty Principle",
+                text: "<b>Statement I:</b> According to Heisenberg, $\\Delta x \\cdot \\Delta p_x \\ge \\frac{h}{4\\pi}$.<br><b>Statement II:</b> Heisenberg uncertainty principle is significant for macroscopic objects like tennis balls.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 2,
+                explanation: "The uncertainty principle applies universally but is practically significant only for microscopic subatomic particles like electrons."
+            },
+            {
+                id: 10,
+                category: "Statement Based",
+                topic: "Extra Stability of Orbitals",
+                text: "<b>Statement I:</b> Chromium ($Z=24$) has electronic configuration $[\\text{Ar}] 3d^5 4s^1$ instead of $[\\text{Ar}] 3d^4 4s^2$.<br><b>Statement II:</b> Half-filled and fully-filled degenerate orbitals have higher stability due to symmetrical distribution and maximum exchange energy.",
+                options: [
+                    "Both Statement I and Statement II are correct",
+                    "Both Statement I and Statement II are incorrect",
+                    "Statement I is correct but Statement II is incorrect",
+                    "Statement I is incorrect but Statement II is correct"
+                ],
+                correct: 0,
+                explanation: "Chromium adopts $3d^5 4s^1$ to gain stability from a half-filled d-subshell, driven by higher exchange energy and symmetry."
+            },
+
+            // --- 5 ASSERTION & REASONING QUESTIONS ---
+            {
+                id: 11,
+                category: "Assertion & Reason",
+                topic: "Mole Concept",
+                text: "<b>Assertion (A):</b> $16\\text{ g}$ of $O_2$ and $14\\text{ g}$ of $N_2$ contain the same number of molecules.<br><b>Reason (R):</b> Equal moles of all gases at same conditions contain equal number of molecules.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                    "(A) is true but (R) is false",
+                    "(A) is false but (R) is true"
+                ],
+                correct: 0,
+                explanation: "Moles of $O_2 = 16/32 = 0.5\\text{ mol}$. Moles of $N_2 = 14/28 = 0.5\\text{ mol}$. Since moles are equal, molecule counts are equal."
+            },
+            {
+                id: 12,
+                category: "Assertion & Reason",
+                topic: "Hydrogen Spectrum",
+                text: "<b>Assertion (A):</b> Balmer series lines of hydrogen spectrum lie in the visible region.<br><b>Reason (R):</b> Balmer series transitions occur when electrons jump from $n_2 > 2$ to lower level $n_1 = 2$.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                    "(A) is true but (R) is false",
+                    "(A) is false but (R) is true"
+                ],
+                correct: 0,
+                explanation: "Transitions ending at $n_1=2$ emit photons in the visible spectrum range ($400 - 700\\text{ nm}$)."
+            },
+            {
+                id: 13,
+                category: "Assertion & Reason",
+                topic: "Quantum Numbers",
+                text: "<b>Assertion (A):</b> The 4s orbital is filled before the 3d orbital in ground state atoms.<br><b>Reason (R):</b> According to $(n+l)$ rule, 4s orbital ($n+l=4$) has lower energy than 3d orbital ($n+l=5$).",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                    "(A) is true but (R) is false",
+                    "(A) is false but (R) is true"
+                ],
+                correct: 0,
+                explanation: "For $4s$: $n+l = 4+0=4$. For $3d$: $n+l = 3+2=5$. Lower $(n+l)$ orbital fills first according to Aufbau principle."
+            },
+            {
+                id: 14,
+                category: "Assertion & Reason",
+                topic: "Wavefunction Node Concept",
+                text: "<b>Assertion (A):</b> For a $2s$ orbital, there is one radial node where $\\psi^2 = 0$.<br><b>Reason (R):</b> Number of radial nodes for any orbital is given by formula $(n - l - 1)$.",
+                options: [
+                    "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+                    "(A) is true but (R) is false",
+                    "(A) is false but (R) is true"
+                ],
+                correct: 0,
+                explanation: "Radial nodes $= n - l - 1$. For $2s$: $n=2, l=0 \\implies 2 - 0 - 1 = 1$ radial node."
+            },
+            {
+                id: 15,
+                category: "Assertion & Reason",
+                topic: "Stoichiometry & Limiting Reagent",
+                text: "<b>Assertion (A):</b> In a reaction between $2\\text{ moles } H_2$ and $2\\text{ moles } O_2$, $H_2$ acts as limiting reagent.<br><b>Reason (R):</b> Limiting reagent is the reactant present in lesser molar quantity regardless of stoichiometric ratios.",
+                options: [
+                    "Both (A) and (R) are true and (R) is NOT the correct explanation of (A)",
+                    "(A) is true but (R) is false",
+                    "(A) is false but (R) is true",
+                    "Both (A) and (R) are false"
+                ],
+                correct: 1,
+                explanation: "$2H_2 + O_2 \\rightarrow 2H_2O$. $2\\text{ mol } H_2$ requires $1\\text{ mol } O_2$. So $H_2$ is completely consumed ($H_2$ is limiting). But (R) is false because limiting reagent depends on reaction stoichiometry, not just initial molar mass."
+            },
+
+            // --- 5 CASE STUDY BASED QUESTIONS ---
+            {
+                id: 16,
+                category: "Case Study",
+                topic: "Passage: Photoelectric Effect & Quantum Physics",
+                text: "<b>Passage:</b> In 1905, Albert Einstein explained photoelectric effect using Planck's quantum theory. Light consists of quanta of energy called photons ($E = h\\nu$). When light of frequency $\\nu$ strikes a metal surface with work function $\\Phi_0 = h\\nu_0$, photoelectrons are ejected with maximum kinetic energy $K_{max} = h\\nu - h\\nu_0$.<br><br><b>Q16:</b> If potassium metal ($\\Phi_0 = 2.25\\text{ eV}$) is irradiated with light of energy $4.25\\text{ eV}$, what is the maximum kinetic energy of emitted electrons?",
+                options: ["2.00 eV", "6.50 eV", "1.89 eV", "2.25 eV"],
+                correct: 0,
+                explanation: "$K_{max} = E - \\Phi_0 = 4.25\\text{ eV} - 2.25\\text{ eV} = 2.00\\text{ eV}$."
+            },
+            {
+                id: 17,
+                category: "Case Study",
+                topic: "Passage: Photoelectric Effect & Quantum Physics",
+                text: "<b>Passage Continuation:</b> Referring to the same photoelectric experiment on potassium ($\\Phi_0 = 2.25\\text{ eV}$):<br><br><b>Q17:</b> What is the stopping potential ($V_0$) required to halt the photoelectric current completely?",
+                options: ["4.25 V", "2.25 V", "2.00 V", "1.50 V"],
+                correct: 2,
+                explanation: "$e V_0 = K_{max} = 2.00\\text{ eV} \\implies V_0 = 2.00\\text{ V}$."
+            },
+            {
+                id: 18,
+                category: "Case Study",
+                topic: "Passage: Bohr's Hydrogen Atom Model",
+                text: "<b>Passage:</b> Bohr postulated that electrons revolve in stationary orbits where orbital radius $r_n = 0.529 \\frac{n^2}{Z} \\text{ \\AA}$ and energy $E_n = -13.6 \\frac{Z^2}{n^2} \\text{ eV}$. Energy absorbed or emitted during electronic transitions is given by $\\Delta E = h\\nu$.<br><br><b>Q18:</b> What is the radius of the $3^{\\text{rd}}$ orbit ($n=3$) of $\\text{Li}^{2+}$ ion ($Z=3$)?",
+                options: ["0.529 Å", "1.587 Å", "0.176 Å", "4.761 Å"],
+                correct: 1,
+                explanation: "$r_3 = 0.529 \\times \\frac{3^2}{3} = 0.529 \\times 3 = 1.587\\text{ \\AA}$."
+            },
+            {
+                id: 19,
+                category: "Case Study",
+                topic: "Passage: Bohr's Hydrogen Atom Model",
+                text: "<b>Passage Continuation:</b> Using Bohr's model for $H$-atom ($Z=1$):<br><br><b>Q19:</b> Calculate the ionization energy of a Hydrogen atom initially in its first excited state ($n=2$).",
+                options: ["+13.6 eV", "+3.4 eV", "+1.51 eV", "+0.85 eV"],
+                correct: 1,
+                explanation: "$E_2 = -13.6 / 2^2 = -3.4\\text{ eV}$. Ionization energy from $n=2$ to $n=\\infty$ is $+3.4\\text{ eV}$."
+            },
+            {
+                id: 20,
+                category: "Case Study",
+                topic: "Passage: Empirical Formula Determination",
+                text: "<b>Passage:</b> An organic compound containing carbon, hydrogen, and oxygen was subjected to elemental analysis. It yielded $40\\%$ Carbon, $6.67\\%$ Hydrogen, and $53.33\\%$ Oxygen by mass.<br><br><b>Q20:</b> What is the empirical formula of this compound? (Atomic masses: $\\text{C}=12, \\text{H}=1, \\text{O}=16$)",
+                options: ["CH₂O", "C₂H₄O₂", "CHO", "CH₄O"],
+                correct: 0,
+                explanation: "Moles ratio: $\\text{C} = 40/12 = 3.33$, $\\text{H} = 6.67/1 = 6.67$, $\\text{O} = 53.33/16 = 3.33$. Ratio $\\text{C:H:O} = 1:2:1 \\implies \\text{CH}_2\\text{O}$."
+            },
+
+            // --- 15 NUMERICAL CRITICAL LEVEL QUESTIONS ---
+            {
+                id: 21,
+                category: "Numerical Critical",
+                topic: "Mole Concept & Solutions",
+                text: "Calculate the total number of electrons present in $1.8\\text{ grams}$ of water ($\text{H}_2\text{O}$) molecule. ($N_A = 6.022 \\times 10^{23}$)",
+                options: ["6.022 × 10²²", "6.022 × 10²³", "3.011 × 10²³", "1.204 × 10²⁴"],
+                correct: 1,
+                explanation: "Moles of $\\text{H}_2\\text{O} = 1.8/18 = 0.1\\text{ mol}$. Each $\\text{H}_2\\text{O}$ has $(2\\times 1 + 8) = 10$ electrons. Total electrons $= 0.1 \\times 10 \\times N_A = 1.0 N_A = 6.022 \\times 10^{23}$."
+            },
+            {
+                id: 22,
+                category: "Numerical Critical",
+                topic: "Stoichiometry",
+                text: "What volume of oxygen ($\text{O}_2$) gas at STP is required to completely burn $30\\text{ g}$ of ethane ($\text{C}_2\text{H}_6$) gas?",
+                options: ["22.4 L", "78.4 L", "44.8 L", "56.0 L"],
+                correct: 1,
+                explanation: "$2\\text{C}_2\\text{H}_6 + 7\\text{O}_2 \\rightarrow 4\\text{CO}_2 + 6\\text{H}_2\\text{O}$. Moles of $\\text{C}_2\\text{H}_6 = 30/30 = 1\\text{ mol}$. Required $\\text{O}_2 = 3.5\\text{ mol}$. Volume $= 3.5 \\times 22.4\\text{ L} = 78.4\\text{ L}$."
+            },
+            {
+                id: 23,
+                category: "Numerical Critical",
+                topic: "de Broglie Wavelength",
+                text: "Calculate the de Broglie wavelength of a electron moving with a velocity of $2.0 \\times 10^6 \\text{ m/s}$. ($m_e = 9.1 \\times 10^{-31} \\text{ kg}, h = 6.626 \\times 10^{-34} \\text{ J s}$)",
+                options: ["0.364 nm", "3.64 nm", "0.036 nm", "1.22 nm"],
+                correct: 0,
+                explanation: "$\\lambda = \\frac{h}{mv} = \\frac{6.626 \\times 10^{-34}}{9.1 \\times 10^{-31} \\times 2.0 \\times 10^6} = 3.64 \\times 10^{-10} \\text{ m} = 0.364\\text{ nm}$."
+            },
+            {
+                id: 24,
+                category: "Numerical Critical",
+                topic: "Heisenberg Uncertainty Principle",
+                text: "If the uncertainty in position of an electron is $0.1\\text{ \\AA}$ ($10^{-11}\\text{ m}$), what is the minimum uncertainty in its velocity? ($m = 9.1 \\times 10^{-31}\\text{ kg}$)",
+                options: ["5.79 × 10⁶ m/s", "5.79 × 10⁵ m/s", "1.16 × 10⁶ m/s", "3.22 × 10⁴ m/s"],
+                correct: 0,
+                explanation: "$\\Delta v = \\frac{h}{4\\pi m \\Delta x} = \\frac{6.626 \\times 10^{-34}}{4 \\times 3.1416 \\times 9.1 \\times 10^{-31} \\times 10^{-11}} \\approx 5.79 \\times 10^6 \\text{ m/s}$."
+            },
+            {
+                id: 25,
+                category: "Numerical Critical",
+                topic: "Hydrogen Spectrum - Rydberg Equation",
+                text: "Calculate the shortest wavelength line (series limit) in the Balmer series of Hydrogen atom. ($R_H = 109677\\text{ cm}^{-1}$)",
+                options: ["364.6 nm", "656.3 nm", "121.5 nm", "486.1 nm"],
+                correct: 0,
+                explanation: "For Balmer series limit: $n_1=2, n_2=\\infty$. $\\frac{1}{\\lambda} = R_H \\left(\\frac{1}{2^2} - 0\\right) = \\frac{R_H}{4}$. $\\lambda = \\frac{4}{109677\\text{ cm}^{-1}} = 364.6\\text{ nm}$."
+            },
+            {
+                id: 26,
+                category: "Numerical Critical",
+                topic: "Bohr Model Energy",
+                text: "Find the ratio of kinetic energy to total energy for an electron in the $2^{\\text{nd}}$ orbit of Hydrogen atom.",
+                options: ["1 : -1", "-1 : 1", "1 : 2", "2 : -1"],
+                correct: 0,
+                explanation: "For Bohr orbit: $K = -E_{total}$. Thus $K / E_{total} = -1$, ratio is $1 : -1$."
+            },
+            {
+                id: 27,
+                category: "Numerical Critical",
+                topic: "Limiting Reagent",
+                text: "$50.0\\text{ kg}$ of $\text{N}_2\\text{(g)}$ and $10.0\\text{ kg}$ of $\text{H}_2\\text{(g)}$ are mixed to produce $\text{NH}_3\\text{(g)}$. Identify the limiting reagent and calculate mass of $\text{NH}_3$ produced.",
+                options: [
+                    "H₂ is limiting; 56.66 kg NH₃ produced",
+                    "N₂ is limiting; 60.71 kg NH₃ produced",
+                    "H₂ is limiting; 28.33 kg NH₃ produced",
+                    "N₂ is limiting; 50.00 kg NH₃ produced"
+                ],
+                correct: 0,
+                explanation: "Moles $N_2 = 50000/28 = 1785.7\\text{ mol}$. Moles $H_2 = 10000/2 = 5000\\text{ mol}$. Reaction $N_2 + 3H_2 \\rightarrow 2NH_3$. $5000\\text{ mol } H_2$ requires $1666.7\\text{ mol } N_2$. So $H_2$ is limiting. Yield $= (5000 \\times 2/3) \\times 17\\text{ g} = 56.66\\text{ kg}$."
+            },
+            {
+                id: 28,
+                category: "Numerical Critical",
+                topic: "Molarity Calculation",
+                text: "Calculate the molarity of a solution prepared by dissolving $4.0\\text{ g}$ of $\text{NaOH}$ in enough water to form $250\\text{ mL}$ of solution.",
+                options: ["0.40 M", "0.20 M", "1.00 M", "0.10 M"],
+                correct: 0,
+                explanation: "Moles $\\text{NaOH} = 4.0/40 = 0.10\\text{ mol}$. Volume $= 0.25\\text{ L}$. Molarity $= 0.10 / 0.25 = 0.40\\text{ M}$."
+            },
+            {
+                id: 29,
+                category: "Numerical Critical",
+                topic: "Molality Calculation",
+                text: "Density of $3\\text{ M}$ solution of $\text{NaCl}$ is $1.25\\text{ g/mL}$. Calculate the molality of the solution. (Molar mass of $\text{NaCl} = 58.5\\text{ g/mol}$)",
+                options: ["2.79 m", "3.00 m", "2.15 m", "1.79 m"],
+                correct: 0,
+                explanation: "Mass of $1\\text{ L}$ solution $= 1250\\text{ g}$. Mass of $3\\text{ moles } \\text{NaCl} = 3 \\times 58.5 = 175.5\\text{ g}$. Mass of solvent $= 1250 - 175.5 = 1074.5\\text{ g} = 1.0745\\text{ kg}$. Molality $= 3 / 1.0745 = 2.79\\text{ m}$."
+            },
+            {
+                id: 30,
+                category: "Numerical Critical",
+                topic: "Bohr Model Velocity",
+                text: "What is the ratio of velocity of electron in $1^{\\text{st}}$ orbit of $\text{H}$-atom to velocity of light ($c = 3 \\times 10^8\\text{ m/s}$)?",
+                options: ["1 / 137", "1 / 237", "1 / 100", "1 / 1836"],
+                correct: 0,
+                explanation: "Velocity in $1^{\\text{st}}$ orbit $v_1 = \\frac{2.18 \\times 10^6}{3 \\times 10^8} \\approx \\frac{1}{137} c$ (Fine structure constant)."
+            },
+            {
+                id: 31,
+                category: "Numerical Critical",
+                topic: "Number of Spectral Lines",
+                text: "How many maximum spectral lines are emitted when electron in $H$-atom drops from $n=5$ to ground state ($n=1$)?",
+                options: ["10", "15", "6", "8"],
+                correct: 0,
+                explanation: "Number of lines $= \\frac{n(n-1)}{2} = \\frac{5(4)}{2} = 10$ lines."
+            },
+            {
+                id: 32,
+                category: "Numerical Critical",
+                topic: "Law of Multiple Proportions",
+                text: "Carbon forms two oxides containing $42.9\\%$ and $27.3\\%$ Carbon respectively. This data illustrates which chemical law?",
+                options: [
+                    "Law of Multiple Proportions",
+                    "Law of Definite Proportions",
+                    "Law of Reciprocal Proportions",
+                    "Gay-Lussac's Law"
+                ],
+                correct: 0,
+                explanation: "Oxide 1: $42.9\\text{g C} : 57.1\\text{g O} \\implies 1\\text{g C} : 1.33\\text{g O}$. Oxide 2: $27.3\\text{g C} : 72.7\\text{g O} \\implies 1\\text{g C} : 2.66\\text{g O}$. Ratio of oxygen masses $= 1:2$, illustrating Law of Multiple Proportions."
+            },
+            {
+                id: 33,
+                category: "Numerical Critical",
+                topic: "Quantum Numbers Calculation",
+                text: "How many electrons in an atom can have the quantum numbers $n = 4, l = 2$ and $m_s = +1/2$?",
+                options: ["5", "10", "2", "1"],
+                correct: 0,
+                explanation: "$n=4, l=2$ refers to $4d$ subshell ($5$ orbitals). Each orbital holds 1 electron with $m_s = +1/2$. Total $= 5$ electrons."
+            },
+            {
+                id: 34,
+                category: "Numerical Critical",
+                topic: "Empirical Formula Weight",
+                text: "A compound has empirical formula $\text{CH}_2\text{O}$ and vapor density $30$. What is its molecular formula?",
+                options: ["C₂H₄O₂", "CH₂O", "C₃H₆O₃", "C₄H₈O₄"],
+                correct: 0,
+                explanation: "Molar Mass $= 2 \\times \\text{Vapor Density} = 2 \\times 30 = 60\\text{ g/mol}$. Empirical formula weight of $\\text{CH}_2\\text{O} = 12 + 2 + 16 = 30$. $n = 60/30 = 2 \\implies \\text{C}_2\\text{H}_4\\text{O}_2$."
+            },
+            {
+                id: 35,
+                category: "Numerical Critical",
+                topic: "Bohr Orbital Frequency",
+                text: "What is the frequency of revolution of electron in $1^{\\text{st}}$ Bohr orbit of $H$-atom? ($r_1 = 0.529\\text{ \\AA}, v_1 = 2.18 \\times 10^6\\text{ m/s}$)",
+                options: ["6.55 × 10¹⁵ Hz", "3.28 × 10¹⁵ Hz", "1.00 × 10¹⁴ Hz", "9.11 × 10¹⁶ Hz"],
+                correct: 0,
+                explanation: "$f = \\frac{v}{2\\pi r} = \\frac{2.18 \\times 10^6}{2 \\times 3.1416 \\times 0.529 \\times 10^{-10}} \\approx 6.55 \\times 10^{15} \\text{ Hz}$."
+            },
+
+            // --- 10 SVG DIAGRAM / CONCEPTUAL WAVEFUNCTION QUESTIONS ---
+            {
+                id: 36,
+                category: "Diagram Based",
+                topic: "Radial Wavefunction Plot",
+                text: "Identify the orbital represented by the given radial probability density distribution graph $\\psi^2(r)$ vs $r$ showing 1 radial node and maximum probability away from nucleus:",
+                svg: `<svg width="280" height="150" viewBox="0 0 280 150" class="bg-slate-950 rounded-lg">
+                        <line x1="30" y1="130" x2="260" y2="130" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="30" y1="130" x2="30" y2="10" stroke="#94a3b8" stroke-width="2"/>
+                        <path d="M 30 130 Q 50 20, 80 130 T 180 30 T 250 130" fill="none" stroke="#10b981" stroke-width="3"/>
+                        <text x="250" y="145" fill="#94a3b8" font-size="10">r</text>
+                        <text x="10" y="20" fill="#94a3b8" font-size="10">Ψ²</text>
+                        <circle cx="80" cy="130" r="3" fill="#f59e0b"/>
+                      </svg>`,
+                options: ["2s orbital", "1s orbital", "3s orbital", "2p orbital"],
+                correct: 0,
+                explanation: "The plot shows $\\psi^2 = 0$ at origin, rises, drops to zero (1 radial node at $r>0$), then reaches a larger peak. This is characteristic of the $2s$ orbital."
+            },
+            {
+                id: 37,
+                category: "Diagram Based",
+                topic: "Orbital Shapes & Boundary Surfaces",
+                text: "Analyze the boundary surface diagram shown below and select the correct orbital designation:",
+                svg: `<svg width="200" height="150" viewBox="0 0 200 150" class="bg-slate-950 rounded-lg">
+                        <line x1="20" y1="75" x2="180" y2="75" stroke="#475569" stroke-dasharray="3,3"/>
+                        <line x1="100" y1="10" x2="100" y2="140" stroke="#475569" stroke-dasharray="3,3"/>
+                        <path d="M 100 75 C 60 20, 20 75, 100 75 C 140 20, 180 75, 100 75 Z" fill="#3b82f6" opacity="0.8"/>
+                        <path d="M 100 75 C 60 130, 20 75, 100 75 C 140 130, 180 75, 100 75 Z" fill="#ef4444" opacity="0.8"/>
+                        <text x="170" y="70" fill="#94a3b8" font-size="10">x</text>
+                        <text x="105" y="20" fill="#94a3b8" font-size="10">z</text>
+                      </svg>`,
+                options: ["p_z orbital", "p_x orbital", "d_xz orbital", "s orbital"],
+                correct: 0,
+                explanation: "Dumbbell-shaped lobes oriented along the z-axis represent the $p_z$ atomic orbital."
+            },
+            {
+                id: 38,
+                category: "Diagram Based",
+                topic: "d-Orbital Shapes",
+                text: "The diagram below depicts a d-orbital with a circular doughnut-shaped ring of electron density in the xy-plane. Identify it:",
+                svg: `<svg width="200" height="150" viewBox="0 0 200 150" class="bg-slate-950 rounded-lg">
+                        <line x1="100" y1="10" x2="100" y2="140" stroke="#475569" stroke-width="1.5"/>
+                        <ellipse cx="100" cy="75" rx="50" ry="18" fill="none" stroke="#f59e0b" stroke-width="4"/>
+                        <path d="M 100 75 C 80 20, 120 20, 100 75 Z" fill="#10b981"/>
+                        <path d="M 100 75 C 80 130, 120 130, 100 75 Z" fill="#10b981"/>
+                        <text x="105" y="20" fill="#94a3b8" font-size="10">z</text>
+                      </svg>`,
+                options: ["d_z² orbital", "d_x²-y² orbital", "d_xy orbital", "d_yz orbital"],
+                correct: 0,
+                explanation: "The $d_{z^2}$ orbital consists of two lobes along the z-axis surrounded by a doughnut ring (torus) of probability density in the xy-plane."
+            },
+            {
+                id: 39,
+                category: "Diagram Based",
+                topic: "Hydrogen Energy Level Transitions",
+                text: "Which electronic transition shown in the energy level diagram emits a photon of the shortest wavelength (highest energy)?",
+                svg: `<svg width="240" height="150" viewBox="0 0 240 150" class="bg-slate-950 rounded-lg">
+                        <line x1="20" y1="20" x2="220" y2="20" stroke="#94a3b8"/><text x="225" y="24" fill="#94a3b8" font-size="9">n=4</text>
+                        <line x1="20" y1="50" x2="220" y2="50" stroke="#94a3b8"/><text x="225" y="54" fill="#94a3b8" font-size="9">n=3</text>
+                        <line x1="20" y1="90" x2="220" y2="90" stroke="#94a3b8"/><text x="225" y="94" fill="#94a3b8" font-size="9">n=2</text>
+                        <line x1="20" y1="130" x2="220" y2="130" stroke="#94a3b8"/><text x="225" y="134" fill="#94a3b8" font-size="9">n=1</text>
+                        
+                        <!-- A: 4->1 -->
+                        <line x1="50" y1="20" x2="50" y2="130" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="45" y="75" fill="#ef4444" font-size="10" font-weight="bold">A</text>
+                        
+                        <!-- B: 4->2 -->
+                        <line x1="100" y1="20" x2="100" y2="90" stroke="#3b82f6" stroke-width="2"/>
+                        <text x="95" y="55" fill="#3b82f6" font-size="10" font-weight="bold">B</text>
+
+                        <!-- C: 3->2 -->
+                        <line x1="150" y1="50" x2="150" y2="90" stroke="#10b981" stroke-width="2"/>
+                        <text x="145" y="75" fill="#10b981" font-size="10" font-weight="bold">C</text>
+                      </svg>`,
+                options: ["Transition A (n=4 to n=1)", "Transition B (n=4 to n=2)", "Transition C (n=3 to n=2)", "All transitions have same wavelength"],
+                correct: 0,
+                explanation: "Transition $n=4 \\rightarrow n=1$ has the largest energy gap $\\Delta E$. Since $\\lambda = hc/\\Delta E$, highest energy corresponds to the shortest wavelength."
+            },
+            {
+                id: 40,
+                category: "Diagram Based",
+                topic: "Radial Wavefunction $\\psi(r)$ vs $r$",
+                text: "Which curve represents the radial wavefunction $\\psi(r)$ starting from a non-zero positive value at nucleus $r=0$ with no nodes?",
+                svg: `<svg width="220" height="130" viewBox="0 0 220 130" class="bg-slate-950 rounded-lg">
+                        <line x1="20" y1="110" x2="200" y2="110" stroke="#64748b"/>
+                        <line x1="20" y1="110" x2="20" y2="10" stroke="#64748b"/>
+                        <path d="M 20 20 Q 60 100, 190 110" fill="none" stroke="#38bdf8" stroke-width="3"/>
+                        <text x="190" y="125" fill="#94a3b8" font-size="10">r</text>
+                        <text x="5" y="20" fill="#94a3b8" font-size="10">Ψ</text>
+                      </svg>`,
+                options: ["1s orbital", "2s orbital", "2p orbital", "3d orbital"],
+                correct: 0,
+                explanation: "Only s-orbitals have finite non-zero wavefunction values at the nucleus ($r=0$). $1s$ has no radial nodes ($n-l-1 = 1-0-1 = 0$)."
+            },
+            {
+                id: 41,
+                category: "Diagram Based",
+                topic: "Electromagnetic Spectrum",
+                text: "Observe the EM spectrum ordering below. Which region 'X' lies between Ultraviolet and Infra-red light?",
+                svg: `<svg width="300" height="60" viewBox="0 0 300 60" class="bg-slate-950 rounded-lg">
+                        <rect x="10" y="15" width="60" height="30" fill="#334155" rx="4"/><text x="22" y="34" fill="#cbd5e1" font-size="10">UV</text>
+                        <rect x="80" y="15" width="70" height="30" fill="#10b981" rx="4"/><text x="110" y="34" fill="#ffffff" font-size="12" font-weight="bold">X</text>
+                        <rect x="160" y="15" width="60" height="30" fill="#334155" rx="4"/><text x="180" y="34" fill="#cbd5e1" font-size="10">IR</text>
+                        <rect x="230" y="15" width="60" height="30" fill="#334155" rx="4"/><text x="235" y="34" fill="#cbd5e1" font-size="10">Micro</text>
+                      </svg>`,
+                options: ["Visible Light", "X-Rays", "Gamma Rays", "Radio Waves"],
+                correct: 0,
+                explanation: "The visible spectrum ($400 - 700\\text{ nm}$) lies directly between Ultraviolet and Infrared radiation."
+            },
+            {
+                id: 42,
+                category: "Diagram Based",
+                topic: "Aufbau Principle Orbitals Fill",
+                text: "The diagram illustrates orbital filling order. Which subshell is filled immediately after 3d?",
+                svg: `<svg width="200" height="120" viewBox="0 0 200 120" class="bg-slate-950 rounded-lg">
+                        <text x="20" y="30" fill="#38bdf8" font-size="12" font-weight="bold">1s → 2s → 2p → 3s → 3p → 4s → 3d → [ ? ]</text>
+                      </svg>`,
+                options: ["4p", "5s", "4d", "4f"],
+                correct: 0,
+                explanation: "According to $(n+l)$ rule, $3d$ ($n+l=5$) is followed by $4p$ ($n+l=5, n=4$)."
+            },
+            {
+                id: 43,
+                category: "Diagram Based",
+                topic: "Hund's Rule Violation",
+                text: "Which of the following orbital electronic configurations violates Hund's Rule of Maximum Multiplicity for a $p^3$ subshell?",
+                svg: `<svg width="260" height="80" viewBox="0 0 260 80" class="bg-slate-950 rounded-lg">
+                        <g transform="translate(20,20)">
+                            <rect x="0" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <rect x="30" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <rect x="60" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <text x="5" y="22" fill="#ef4444" font-size="16">↑↓</text>
+                            <text x="38" y="22" fill="#ef4444" font-size="16">↑</text>
+                            <text x="15" y="45" fill="#cbd5e1" font-size="10">Config A</text>
+                        </g>
+                        <g transform="translate(140,20)">
+                            <rect x="0" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <rect x="30" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <rect x="60" y="0" width="30" height="30" stroke="#94a3b8" fill="none"/>
+                            <text x="8" y="22" fill="#10b981" font-size="16">↑</text>
+                            <text x="38" y="22" fill="#10b981" font-size="16">↑</text>
+                            <text x="68" y="22" fill="#10b981" font-size="16">↑</text>
+                            <text x="15" y="45" fill="#cbd5e1" font-size="10">Config B</text>
+                        </g>
+                      </svg>`,
+                options: ["Configuration A", "Configuration B", "Both violate Hund's rule", "Neither violates Hund's rule"],
+                correct: 0,
+                explanation: "Configuration A pairs electrons in the first orbital before singly occupying all degenerate orbitals, violating Hund's rule."
+            },
+            {
+                id: 44,
+                category: "Diagram Based",
+                topic: "Bohr Atom Radius Ratio",
+                text: "The diagram shows Bohr orbit radii $r_1, r_2, r_3$. What is the mathematical ratio $r_1 : r_2 : r_3$ for Hydrogen?",
+                svg: `<svg width="200" height="140" viewBox="0 0 200 140" class="bg-slate-950 rounded-lg">
+                        <circle cx="100" cy="70" r="8" fill="#f59e0b"/>
+                        <circle cx="100" cy="70" r="25" stroke="#38bdf8" fill="none" stroke-dasharray="2,2"/>
+                        <circle cx="100" cy="70" r="45" stroke="#38bdf8" fill="none" stroke-dasharray="2,2"/>
+                        <circle cx="100" cy="70" r="62" stroke="#38bdf8" fill="none" stroke-dasharray="2,2"/>
+                      </svg>`,
+                options: ["1 : 4 : 9", "1 : 2 : 3", "1 : 8 : 27", "1 : 3 : 5"],
+                correct: 0,
+                explanation: "Since $r_n \\propto n^2$, the ratio of radii $r_1 : r_2 : r_3 = 1^2 : 2^2 : 3^2 = 1 : 4 : 9$."
+            },
+            {
+                id: 45,
+                category: "Diagram Based",
+                topic: "d_x²-y² Orbital Alignment",
+                text: "In which coordinate plane are the four lobes of the $d_{x^2-y^2}$ orbital aligned?",
+                svg: `<svg width="180" height="130" viewBox="0 0 180 130" class="bg-slate-950 rounded-lg">
+                        <line x1="20" y1="65" x2="160" y2="65" stroke="#94a3b8" stroke-width="2"/>
+                        <line x1="90" y1="10" x2="90" y2="120" stroke="#94a3b8" stroke-width="2"/>
+                        <path d="M 90 65 C 40 20, 140 20, 90 65 Z" fill="#ec4899"/>
+                        <path d="M 90 65 C 40 110, 140 110, 90 65 Z" fill="#ec4899"/>
+                        <path d="M 90 65 C 20 20, 20 110, 90 65 Z" fill="#ec4899"/>
+                        <path d="M 90 65 C 160 20, 160 110, 90 65 Z" fill="#ec4899"/>
+                        <text x="155" y="60" fill="#cbd5e1" font-size="10">x</text>
+                        <text x="95" y="20" fill="#cbd5e1" font-size="10">y</text>
+                      </svg>`,
+                options: [
+                    "Directly along the X and Y axes",
+                    "In between the X and Y axes at 45°",
+                    "Directly along Z axis only",
+                    "In the YZ plane between axes"
+                ],
+                correct: 0,
+                explanation: "The $d_{x^2-y^2}$ orbital has its four lobes directed *along* the Cartesian x and y coordinate axes."
+            }
+        ];
+
+        // Active Session Shuffled Questions
+        let activeQuestions = [];
+
+
+        window.onload = function() {
+            generateCaptcha();
+            setupSecurityListeners();
+        };
+
+        // CAPTCHA Generator
+        function generateCaptcha() {
+            captchaNum1 = Math.floor(Math.random() * 10) + 1;
+            captchaNum2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('captchaQuestion').innerText = `${captchaNum1} + ${captchaNum2} = ?`;
+            document.getElementById('captchaAnswer').value = '';
+        }
+
+        // Authentication Handler
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('candidateName').value.trim();
+            const passInput = document.getElementById('datePassword').value.trim();
+            const captchaInput = parseInt(document.getElementById('captchaAnswer').value.trim());
+            const errorDiv = document.getElementById('authError');
+
+            errorDiv.classList.add('hidden');
+
+            // Date Password Check (Format DDMMYYYY using today's system date)
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const expectedPass = `${dd}${mm}${yyyy}`;
+
+            if (passInput !== expectedPass) {
+                errorDiv.innerText = `Invalid Date Password! Enter today's date password (DDMMYYYY, e.g., ${expectedPass}).`;
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            // Captcha Check
+            if (captchaInput !== (captchaNum1 + captchaNum2)) {
+                errorDiv.innerText = "Incorrect CAPTCHA answer. Please try again.";
+                errorDiv.classList.remove('hidden');
+                generateCaptcha();
+                return;
+            }
+
+            candidate.name = nameInput;
+            document.getElementById('candidateNameDisplay').innerText = candidate.name;
+            document.getElementById('watermarkText').innerText = `SOUMENDRA SIR'S BIOLOGY CLASSES - ${candidate.name.toUpperCase()} (+91 8910587106)`;
+
+            // Switch to Instructions View
+            document.getElementById('authSection').classList.add('hidden');
+            document.getElementById('instructionSection').classList.remove('hidden');
+        }
+
+        // Setup Security Features (Anti-Copy, Fullscreen & Tab Switch Detection)
+        function setupSecurityListeners() {
+            // Block Context Menu & Copy/Paste Shortcuts
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'a')) {
+                    e.preventDefault();
+                }
+                if (e.key === 'F12') e.preventDefault();
+            });
+
+            // Visibility Change (Tab Switch Detection)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden && !document.getElementById('cbtSection').classList.contains('hidden')) {
+                    tabSwitchCount++;
+                    alert(`SECURITY WARNING #${tabSwitchCount}: Tab switching or minimizing during the CBT examination is strictly prohibited! Further attempts may auto-submit your test.`);
+                }
+            });
+        }
+
+        // Shuffle Question Array for Unique Candidate Session
+        function shuffleQuestions(array) {
+            let shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Start Examination
+        function startExam() {
+            const termsChecked = document.getElementById('termsCheck').checked;
+            if (!termsChecked) {
+                alert("Please acknowledge the examination instructions and terms by checking the box.");
+                return;
+            }
+
+            // Request Fullscreen Mode
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }
+
+            // Prepare Session State
+            activeQuestions = shuffleQuestions(rawQuestionBank);
+            userResponses = activeQuestions.map(() => ({ selectedOption: null, status: 'not-visited' }));
+
+            // UI Adjustments
+            document.getElementById('instructionSection').classList.add('hidden');
+            document.getElementById('headerExamInfo').classList.remove('hidden');
+            document.getElementById('watermarkOverlay').classList.remove('hidden');
+            document.getElementById('cbtSection').classList.remove('hidden');
+
+            // Render Palette and First Question
+            renderPalette();
+            loadQuestion(0);
+            startTimer();
+        }
+
+        // Timer Functionality
+        function startTimer() {
+            timeRemaining = 3600;
+            examTimer = setInterval(() => {
+                timeRemaining--;
+                let mins = Math.floor(timeRemaining / 60);
+                let secs = timeRemaining % 60;
+                document.getElementById('timerDisplay').innerText = 
+                    `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(examTimer);
+                    alert("Time is up! Your examination is auto-submitting now.");
+                    processFinalSubmission();
+                }
+            }, 1000);
+        }
+
+
+        // Render Question Palette Grid
+        function renderPalette() {
+            const grid = document.getElementById('paletteGrid');
+            grid.innerHTML = '';
+
+            let counts = { answered: 0, notAnswered: 0, marked: 0, notVisited: 0 };
+
+            activeQuestions.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.innerText = idx + 1;
+                btn.className = "w-9 h-9 rounded-lg font-bold text-xs flex items-center justify-center transition border shadow-sm ";
+                
+                const status = userResponses[idx].status;
+
+                if (status === 'answered') {
+                    btn.className += "bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500";
+                    counts.answered++;
+                } else if (status === 'not-answered') {
+                    btn.className += "bg-rose-600 hover:bg-rose-500 text-white border-rose-500";
+                    counts.notAnswered++;
+                } else if (status === 'marked') {
+                    btn.className += "bg-purple-600 hover:bg-purple-500 text-white border-purple-500";
+                    counts.marked++;
+                } else {
+                    btn.className += "bg-slate-700 hover:bg-slate-600 text-slate-200 border-slate-600";
+                    counts.notVisited++;
+                }
+
+                if (idx === currentQIndex) {
+                    btn.className += " ring-2 ring-amber-400 ring-offset-2 ring-offset-slate-800 font-extrabold";
+                }
+
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+
+            // Update Counts
+            document.getElementById('countAnswered').innerText = counts.answered;
+            document.getElementById('countNotAnswered').innerText = counts.notAnswered;
+            document.getElementById('countMarked').innerText = counts.marked;
+            document.getElementById('countNotVisited').innerText = counts.notVisited;
+        }
+
+        // Load Question Data
+        function loadQuestion(index) {
+            currentQIndex = index;
+            const q = activeQuestions[index];
+
+            // Set Badges
+            document.getElementById('qCategoryBadge').innerText = q.category;
+            document.getElementById('qNumberBadge').innerText = `Question ${index + 1} of 45`;
+            document.getElementById('qText').innerHTML = q.text;
+
+            // Diagram Handler
+            const diagContainer = document.getElementById('qDiagramContainer');
+            if (q.svg) {
+                diagContainer.innerHTML = q.svg;
+                diagContainer.classList.remove('hidden');
+            } else {
+                diagContainer.innerHTML = '';
+                diagContainer.classList.add('hidden');
+            }
+
+            // Render Options
+            const optionsDiv = document.getElementById('optionsContainer');
+            optionsDiv.innerHTML = '';
+
+            const userSel = userResponses[index].selectedOption;
+
+            q.options.forEach((optText, optIdx) => {
+                const optLabel = document.createElement('label');
+                const isChecked = (userSel === optIdx);
+
+                optLabel.className = `flex items-center space-x-3 p-3.5 rounded-xl border transition cursor-pointer ${
+                    isChecked 
+                    ? 'bg-emerald-950/40 border-emerald-500 text-emerald-200 font-medium' 
+                    : 'bg-slate-900/60 border-slate-700/80 text-slate-300 hover:bg-slate-700/50'
+                }`;
+
+                optLabel.innerHTML = `
+                    <input type="radio" name="optionGroup" value="${optIdx}" ${isChecked ? 'checked' : ''} 
+                        onclick="selectOption(${optIdx})" class="w-4 h-4 accent-emerald-500 cursor-pointer">
+                    <span class="text-sm">${optText}</span>
+                `;
+                optionsDiv.appendChild(optLabel);
+            });
+
+            // Mark visited if not already set
+            if (userResponses[index].status === 'not-visited') {
+                userResponses[index].status = 'not-answered';
+            }
+
+            renderPalette();
+
+            // Rerender MathJax formulas if present
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+
+        function selectOption(optIdx) {
+            userResponses[currentQIndex].selectedOption = optIdx;
+            loadQuestion(currentQIndex);
+        }
+
+        function saveAndNext() {
+            if (userResponses[currentQIndex].selectedOption !== null) {
+                userResponses[currentQIndex].status = 'answered';
+            } else {
+                userResponses[currentQIndex].status = 'not-answered';
+            }
+            if (currentQIndex < activeQuestions.length - 1) {
+                loadQuestion(currentQIndex + 1);
+            } else {
+                renderPalette();
+            }
+        }
+
+        function markForReview() {
+            userResponses[currentQIndex].status = 'marked';
+            if (currentQIndex < activeQuestions.length - 1) {
+                loadQuestion(currentQIndex + 1);
+            } else {
+                renderPalette();
+            }
+        }
+
+        function clearResponse() {
+            userResponses[currentQIndex].selectedOption = null;
+            userResponses[currentQIndex].status = 'not-answered';
+            loadQuestion(currentQIndex);
+        }
+
+        function prevQuestion() {
+            if (currentQIndex > 0) {
+                loadQuestion(currentQIndex - 1);
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            loadQuestion(idx);
+        }
+
+        // Submit Confirm Modal
+        function confirmSubmitTest() {
+            let answered = userResponses.filter(r => r.status === 'answered').length;
+            let marked = userResponses.filter(r => r.status === 'marked').length;
+            let unattempted = userResponses.filter(r => r.selectedOption === null).length;
+
+            document.getElementById('modalAnswered').innerText = answered;
+            document.getElementById('modalMarked').innerText = marked;
+            document.getElementById('modalUnattempted').innerText = unattempted;
+
+            document.getElementById('submitModal').classList.remove('hidden');
+        }
+
+        function closeSubmitModal() {
+            document.getElementById('submitModal').classList.add('hidden');
+        }
+
+
+        // Final Submission Processing
+        function processFinalSubmission() {
+            clearInterval(examTimer);
+            candidate.timeTaken = 3600 - timeRemaining;
+            document.getElementById('submitModal').classList.add('hidden');
+            document.getElementById('cbtSection').classList.add('hidden');
+            document.getElementById('headerExamInfo').classList.add('hidden');
+
+            let correctCount = 0;
+            let wrongCount = 0;
+            let unattemptedCount = 0;
+
+            // Topic Performance Tracker
+            let topicStats = {};
+
+            activeQuestions.forEach((q, idx) => {
+                const userSel = userResponses[idx].selectedOption;
+                if (!topicStats[q.topic]) {
+                    topicStats[q.topic] = { total: 0, correct: 0, wrong: 0 };
+                }
+                topicStats[q.topic].total++;
+
+                if (userSel === null) {
+                    unattemptedCount++;
+                } else if (userSel === q.correct) {
+                    correctCount++;
+                    topicStats[q.topic].correct++;
+                } else {
+                    wrongCount++;
+                    topicStats[q.topic].wrong++;
+                }
+            });
+
+            const totalScore = (correctCount * 4) - (wrongCount * 1);
+            candidate.score = totalScore;
+            const attemptedTotal = correctCount + wrongCount;
+            const accuracy = attemptedTotal > 0 ? Math.round((correctCount / attemptedTotal) * 100) : 0;
+
+            // Render Scorecard Stats
+            document.getElementById('reportCandidateName').innerText = candidate.name;
+            document.getElementById('reportDate').innerText = `Date: ${new Date().toLocaleDateString('en-GB')}`;
+            document.getElementById('finalScore').innerText = totalScore;
+            document.getElementById('finalAccuracy').innerText = `${accuracy}%`;
+            document.getElementById('finalCorrect').innerText = correctCount;
+            document.getElementById('finalWrong').innerText = wrongCount;
+            document.getElementById('finalUnattempted').innerText = unattemptedCount;
+
+            // Render Chart.js Breakdown
+            renderChart(correctCount, wrongCount, unattemptedCount);
+
+            // Render Weak Area Diagnostics
+            renderWeakAreas(topicStats);
+
+            // Render Detailed Answer Key
+            renderDetailedSolutions();
+
+            document.getElementById('feedbackSection').classList.remove('hidden');
+
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+
+        // Render Chart.js Doughnut Chart
+        function renderChart(correct, wrong, unattempted) {
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Correct (+4)', 'Incorrect (-1)', 'Unattempted (0)'],
+                    datasets: [{
+                        data: [correct, wrong, unattempted],
+                        backgroundColor: ['#10b981', '#f43f5e', '#64748b'],
+                        borderWidth: 2,
+                        borderColor: '#1e293b'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#f8fafc', font: { size: 11, family: 'Inter' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render Weak Areas
+        function renderWeakAreas(stats) {
+            const container = document.getElementById('weakAreaList');
+            container.innerHTML = '';
+
+            let weakTopicsFound = false;
+
+            for (let topic in stats) {
+                let data = stats[topic];
+                let acc = data.total > 0 ? (data.correct / data.total) * 100 : 0;
+                
+                if (acc < 70) {
+                    weakTopicsFound = true;
+                    const item = document.createElement('div');
+                    item.className = "p-2.5 bg-slate-800 rounded-lg border border-slate-700/80 flex justify-between items-center";
+                    item.innerHTML = `
+                        <div>
+                            <strong class="text-rose-400 block">${topic}</strong>
+                            <span class="text-[11px] text-slate-400">Score: ${data.correct}/${data.total} correct</span>
+                        </div>
+                        <span class="bg-rose-950/60 text-rose-300 text-[10px] font-bold px-2 py-1 rounded border border-rose-800">
+                            Focus Needed (${Math.round(acc)}%)
+                        </span>
+                    `;
+                    container.appendChild(item);
+                }
+            }
+
+            if (!weakTopicsFound) {
+                container.innerHTML = `<div class="text-emerald-400 font-semibold p-2">Excellent performance across all topics! No major weak areas detected.</div>`;
+            }
+        }
+
+        // Render Solutions & Answer Key
+        function renderDetailedSolutions() {
+            const container = document.getElementById('solutionsList');
+            container.innerHTML = '';
+
+            activeQuestions.forEach((q, idx) => {
+                const userSel = userResponses[idx].selectedOption;
+                const isCorrect = (userSel === q.correct);
+                const isUnattempted = (userSel === null);
+
+                let statusBadge = '';
+                if (isCorrect) {
+                    statusBadge = `<span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs px-2.5 py-0.5 rounded font-bold">Correct (+4)</span>`;
+                } else if (isUnattempted) {
+                    statusBadge = `<span class="bg-slate-700 text-slate-300 border border-slate-600 text-xs px-2.5 py-0.5 rounded font-bold">Unattempted (0)</span>`;
+                } else {
+                    statusBadge = `<span class="bg-rose-950 text-rose-400 border border-rose-800 text-xs px-2.5 py-0.5 rounded font-bold">Incorrect (-1)</span>`;
+                }
+
+                const solBox = document.createElement('div');
+                solBox.className = "bg-slate-900/80 border border-slate-700 rounded-xl p-5 space-y-3";
+                solBox.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div class="space-x-2">
+                            <span class="font-bold text-slate-200">Q${idx + 1}.</span>
+                            <span class="text-xs text-amber-400 bg-amber-950/40 border border-amber-800/40 px-2 py-0.5 rounded">${q.topic}</span>
+                        </div>
+                        ${statusBadge}
+                    </div>
+
+                    <div class="text-sm text-slate-200">${q.text}</div>
+
+                    ${q.svg ? `<div class="my-2 p-2 bg-slate-950 rounded border border-slate-800 flex justify-center">${q.svg}</div>` : ''}
+
+                    <div class="grid md:grid-cols-2 gap-2 text-xs pt-2">
+                        <div class="p-2.5 rounded ${userSel === q.correct ? 'bg-emerald-950/30 text-emerald-300' : 'bg-slate-800 text-slate-300'}">
+                            <strong>Your Answer:</strong> ${userSel !== null ? q.options[userSel] : 'None'}
+                        </div>
+                        <div class="p-2.5 rounded bg-emerald-950/50 border border-emerald-800/60 text-emerald-200">
+                            <strong>Correct Option:</strong> ${q.options[q.correct]}
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700 text-xs text-slate-300 leading-relaxed">
+                        <strong class="text-amber-400 block mb-1"><i class="fa-solid fa-lightbulb mr-1"></i> Explanation:</strong>
+                        ${q.explanation}
+                    </div>
+                `;
+                container.appendChild(solBox);
+            });
+        }
+
+        // Export Scorecard as PNG using html2canvas
+        function downloadScorecardImage() {
+            const printArea = document.getElementById('scorecardPrintArea');
+            html2canvas(printArea, { backgroundColor: '#0f172a' }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `NEET_CHEMISTRY_SCORECARD_${candidate.name.replace(/\s+/g, '_')}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        // Send Scorecard Report to WhatsApp Number +91 8910587106
+        function sendToWhatsApp() {
+            const phone = "8910587106";
+            const text = `*NEET CHEMISTRY XI CBT EXAM RESULT*%0A` +
+                         `*Institute:* Soumendra Sir's Biology Classes%0A` +
+                         `*Candidate Name:* ${candidate.name}%0A` +
+                         `*Topic:* NEET CHEMISTRY XI EXAM SERIES 1 SET A%0A` +
+                         `*Total Score:* ${candidate.score} / 180%0A` +
+                         `*Accuracy:* ${document.getElementById('finalAccuracy').innerText}%0A` +
+                         `*Correct:* ${document.getElementById('finalCorrect').innerText}%0A` +
+                         `*Incorrect:* ${document.getElementById('finalWrong').innerText}%0A` +
+                         `*Unattempted:* ${document.getElementById('finalUnattempted').innerText}`;
+            
+            window.open(`https://wa.me/91${phone}?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
